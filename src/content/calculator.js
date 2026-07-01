@@ -20,7 +20,8 @@ export const calculatorConfig = {
       subtitle: 'Dashboard, desktop workflow, or admin suite',
       iconName: 'Blocks',
       basePrice: 3600
-    }
+    },
+
   ],
   scales: [
     {

@@ -39,7 +39,7 @@ export const targetClientProfiles = [
 export const productsData = [
   {
     id: 'easyaudit',
-    name: 'EasyAudit',
+    name: 'Easy Audit Wrokspace for Auditors',
     tagline: 'Tracking Audit Workflow',
     type: 'Ready-to-deploy web application',
     status: 'Production-ready',
@@ -59,7 +59,7 @@ export const productsData = [
     ],
     visual: {
       eyebrow: 'Audit workflow',
-      title: 'Assessments, notices, documents',
+      title: 'Assessments, notices',
       points: ['Multi-step client setup', 'Inline record editing', 'Searchable compliance views']
     }
   },

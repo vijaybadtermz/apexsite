@@ -61,7 +61,7 @@ export default function CostEstimator({ onApplyProposal }) {
 Platform: ${activePlatform.title}
 Scale: ${activeScale.label}
 Add-ons: ${selectedAddonsList || 'None'}
-Estimated budget: $${calculatePrice().toLocaleString()} USD
+Estimated budget: Rs.${calculatePrice().toLocaleString()}/-
 Estimated timeline: ${getTimeline()} weeks
 
 Please help us turn this into a detailed proposal.`;
@@ -169,8 +169,8 @@ Please help us turn this into a detailed proposal.`;
             <div className="calc-result-metrics">
               <span className="result-label">Estimated investment</span>
               <div className="result-price-row">
-                <h3 className="result-price">${calculatePrice().toLocaleString()}</h3>
-                <span className="result-currency">USD</span>
+                <h3 className="result-price">Rs.{calculatePrice().toLocaleString()}</h3>
+                <span className="result-currency">rupees</span>
               </div>
               <p className="result-timeline">Typical delivery window: {getTimeline()} weeks</p>
             </div>

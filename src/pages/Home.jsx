@@ -5,11 +5,23 @@ import Services from '../components/Services';
 import Portfolio from '../components/Portfolio';
 import CostEstimator from '../components/CostEstimator';
 import WhyUs from '../components/WhyUs';
+import Founders from '../components/Founders';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import Process from '../components/Process';
 import Products from '../components/Products';
 import { sendInquiryEmail } from '../services/email';
+
+import iphoneIcon from '../assets/siderail-icons/iphone.png';
+import webIcon from '../assets/siderail-icons/web-browser.png';
+import laptopIcon from '../assets/siderail-icons/laptop.png';
+import aiIcon from '../assets/siderail-icons/ai.png';
+import chatbotIcon from '../assets/siderail-icons/chatbot.png';
+import businessIcon from '../assets/siderail-icons/business.png';
+
+const height = "20px"
+const width = "20px"
+const gap = "5px"
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -77,14 +89,20 @@ export default function Home() {
       <div className="orb orb-one"></div>
       <div className="orb orb-two"></div>
       <div className="side-rail side-rail-left">
-        <span>Web Apps</span>
-        <span>Windows Apps</span>
-        <span>Android Apps</span>
+        <span>
+          <img style={{marginRight:gap, width:width, height:height}} src={webIcon} alt="Web Apps"/>
+          Web Apps
+        </span>
+        <span>
+           <img style={{marginRight:gap,width:width, height:height}} src={laptopIcon} alt="desktop apps"/>
+          Windows Apps
+        </span>
+        <span> <img style={{marginRight:gap,width:width, height:height}} src={iphoneIcon} alt="mobile apps"/>Android Apps</span>
       </div>
       <div className="side-rail side-rail-right">
-        <span>AI Assistants</span>
-        <span>Chatbots</span>
-        <span>Business Systems</span>
+        <span> <img style={{marginRight:gap,width:width, height:height}} src={aiIcon} alt="ai Apps"/>AI Assistants</span>
+        <span> <img style={{marginRight:gap,width:width, height:height}} src={chatbotIcon} alt="chatbot Apps"/>Chatbots</span>
+        <span> <img style={{marginRight:gap,width:width, height:height}} src={businessIcon} alt="business Apps"/>Business Systems</span>
       </div>
 
       <Header
@@ -100,6 +118,7 @@ export default function Home() {
         <Products />
         <CostEstimator onApplyProposal={handleApplyProposal} />
         <WhyUs />
+        <Founders/>
         <Contact
           formData={formData}
           inquirySubmitted={inquirySubmitted}
