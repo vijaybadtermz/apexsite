@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import ProductsPage from './pages/ProductsPage';
-import EstimatorPage from './pages/EstimatorPage';
 import ThemeProvider from './theme/ThemeContext';
 import ThemeToggle from './components/ThemeToggle';
+
+// Lazy-loaded pages
+const Home = lazy(() => import('./pages/Home'));
+const ProductsPage = lazy(() => import('./pages/ProductsPage'));
+const EstimatorPage = lazy(() => import('./pages/EstimatorPage'));
 
 function App() {
   return (
@@ -14,11 +16,29 @@ function App() {
           <div className="theme-toggle-wrapper">
             <ThemeToggle />
           </div>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/products" element={<ProductsPage />} />
-            <Route path="/estimator" element={<EstimatorPage />} />
-          </Routes>
+
+          <Suspense
+            fallback={
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  minHeight: '100vh',
+                  fontSize: '1rem',
+                  fontWeight: 500,
+                }}
+              >
+                Loading...
+              </div>
+            }
+          >
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/products" element={<ProductsPage />} />
+              <Route path="/estimator" element={<EstimatorPage />} />
+            </Routes>
+          </Suspense>
         </div>
       </Router>
     </ThemeProvider>
