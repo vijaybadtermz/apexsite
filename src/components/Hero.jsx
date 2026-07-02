@@ -1,6 +1,6 @@
 import React from 'react';
-import { ArrowRight, ChartNoAxesCombined, Play, ShieldCheck, Smartphone, Sparkles } from 'lucide-react';
-import heroBg from '../assets/main.png';
+import { ArrowRight, ChartNoAxesCombined, Play, ShieldCheck, Smartphone, Sparkles, Globe, Monitor, Cpu, MessageSquare, Network } from 'lucide-react';
+import heroBg from '../assets/herback.jpg';
 
 const proofItems = [
   'Web apps, Windows software, Android apps, and chatbot-enabled products',
@@ -33,6 +33,15 @@ export default function Hero() {
             systems for businesses that either have no proper software yet or are stuck with outdated
             websites and tools.
           </p>
+
+          <div className="hero-capabilities animate-fade-in-up delay-2">
+            <span className="capability-pill"><Globe size={14} /> Web Apps</span>
+            <span className="capability-pill"><Monitor size={14} /> Windows Apps</span>
+            <span className="capability-pill"><Smartphone size={14} /> Android Apps</span>
+            <span className="capability-pill"><Cpu size={14} /> AI Assistants</span>
+            <span className="capability-pill"><MessageSquare size={14} /> Chatbots</span>
+            <span className="capability-pill"><Network size={14} /> Business Systems</span>
+          </div>
 
           <div className="hero-actions animate-fade-in-up delay-3">
             <a href="#contact" className="btn-agency btn-primary hero-btn">

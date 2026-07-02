@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import * as Icons from 'lucide-react';
 import { calculatorConfig } from '../content/calculator';
 
@@ -179,6 +180,16 @@ Please help us turn this into a detailed proposal.`;
               Add this to my inquiry
               <Icons.ArrowRight size={18} />
             </button>
+
+            <div style={{ borderTop: '1px solid var(--border-light)', marginTop: '1.25rem', paddingTop: '1.25rem', textAlign: 'center' }}>
+              <p style={{ fontSize: '0.8rem', color: 'var(--color-muted)', marginBottom: '0.75rem' }}>
+                Need a more comprehensive breakdown with plain-English tooltips?
+              </p>
+              <Link to="/estimator" className="btn-agency" style={{ display: 'inline-flex', padding: '0.5rem 1rem', fontSize: '0.8rem', border: '1px solid var(--border-strong)', color: 'var(--color-primary)', background: 'transparent', width: '100%', justifyContent: 'center', alignItems: 'center', gap: '0.4rem' }}>
+                Launch Step-by-Step Wizard
+                <Icons.ArrowRight size={14} />
+              </Link>
+            </div>
           </div>
         </div>
       </div>
